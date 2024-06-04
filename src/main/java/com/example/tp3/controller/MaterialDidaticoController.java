@@ -30,5 +30,13 @@ public class MaterialDidaticoController {
         return materialDidaticoService.getMatById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        materialDidaticoService.deleteMat(id);
+    }
 
+    @PutMapping("/{id}")
+    public MaterialDidatico update(@PathVariable String id, @RequestBody MaterialDidatico mat) {
+        return materialDidaticoService.updateMat(id, mat);
+    }
 }
